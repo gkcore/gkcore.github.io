@@ -61,6 +61,14 @@ h2{font-size:clamp(26px,3.4vw,36px);margin:0 0 10px;letter-spacing:-.01em}
 .impl h3{margin:0 0 8px;font-size:20px}.impl p{color:var(--muted);margin:0 0 12px}.impl ul{margin:0;padding-left:18px;color:var(--ink);font-size:15px}.impl li{margin:3px 0}
 .impl-p{text-align:center}.impl-p .btn{justify-content:center;width:100%}
 @media(max-width:900px){.impl{grid-template-columns:1fr}}
+.video{max-width:900px;margin:0 auto 30px;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 20px 60px rgba(0,0,0,.45),0 0 0 1px rgba(229,56,59,.15)}
+.video video{display:block;width:100%;aspect-ratio:16/9;background:#000}
+.telas{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.telas figure{margin:0;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.telas img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;object-position:top left;border-bottom:1px solid var(--line)}
+.telas figcaption{padding:12px 14px;font-size:14px;color:var(--muted)}.telas figcaption b{color:var(--ink)}
+@media(max-width:900px){.telas{grid-template-columns:1fr}}
+@media(min-width:600px) and (max-width:900px){.telas{grid-template-columns:1fr 1fr}}
 .faq{display:grid;gap:10px;max-width:820px}
 details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 20px}
 summary{cursor:pointer;font-weight:600}details p{color:var(--muted);margin:10px 0 0}
@@ -74,7 +82,7 @@ footer .w{display:flex;gap:16px;flex-wrap:wrap;justify-content:space-between}
 <body>
 <header><div class="w nav">
   <a class="marca" href="#"><span class="logo"><svg viewBox="0 0 96 96" aria-hidden="true" style="width:100%;height:100%;display:block"><rect x="2.75" y="2.75" width="90.5" height="90.5" rx="21.25" fill="#1e2229" stroke="#3a414c" stroke-width="1.5"/><g fill="#0f1216"><circle cx="16" cy="16" r="2.6"/><circle cx="80" cy="16" r="2.6"/><circle cx="16" cy="80" r="2.6"/><circle cx="80" cy="80" r="2.6"/></g><path d="M67.4 31.1A27 27 0 1 0 72.6 63.5L72.6 52 53 52" fill="none" stroke="#e5383b" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><path d="M67.4 31.1A27 27 0 1 0 72.6 63.5L72.6 52 53 52" fill="none" stroke="#ff8a8d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M44.5 52H39.5M47 45.5 43.6 42.1M47 58.5 43.6 61.9M53 43.5V39.5M53 60.5V64.5" stroke="#ffd2d3" stroke-width="2.4" stroke-linecap="round"/><circle cx="53" cy="52" r="5" fill="#fff"/></svg></span><span>GK <span style="color:#ff5a5f">Core</span></span></a>
-  <nav><a href="#recursos">Recursos</a><a href="#como">Como funciona</a><a href="#planos">Planos</a><a href="#duvidas">Dúvidas</a></nav>
+  <nav><a href="#veja">Veja funcionando</a><a href="#recursos">Recursos</a><a href="#como">Como funciona</a><a href="#planos">Planos</a><a href="#duvidas">Dúvidas</a></nav>
   <a class="btn pri" href="app.html">Abrir o GK Core</a>
 </div></header>
 
@@ -83,13 +91,27 @@ footer .w{display:flex;gap:16px;flex-wrap:wrap;justify-content:space-between}
     <span class="tag">Para empresas de corte a laser</span>
     <h1>Do desenho à proposta <em>em minutos</em>.</h1>
     <p class="lead">O GK Core lê o arquivo do cliente, calcula corte, chapa, dobra, tubo e solda, e monta a proposta com a sua marca. Depois acompanha a produção até a entrega.</p>
-    <div class="ctas"><a class="btn pri" href="https://wa.me/5541987944533?text=Ol%C3%A1!%20Quero%20conhecer%20o%20GK%20Core." target="_blank" rel="noopener">Pedir demonstração no WhatsApp</a><a class="btn" href="app.html">Já sou cliente</a></div>
+    <div class="ctas"><a class="btn pri" href="https://wa.me/5541987944533?text=Ol%C3%A1!%20Quero%20conhecer%20o%20GK%20Core." target="_blank" rel="noopener">Pedir demonstração no WhatsApp</a><a class="btn" href="#veja">▶ Ver o vídeo</a><a class="btn" href="app.html">Já sou cliente</a></div>
   </div>
   <svg class="peca" viewBox="0 0 420 320" aria-hidden="true">
     <g class="base"><path d="M40 40H300L380 120V280H40Z"/><circle cx="110" cy="110" r="28"/><circle cx="300" cy="220" r="22"/><rect x="90" y="200" width="120" height="40" rx="20"/></g>
     <g class="corte"><path d="M40 40H300L380 120V280H40Z"/><circle cx="110" cy="110" r="28"/><circle cx="300" cy="220" r="22"/><rect x="90" y="200" width="120" height="40" rx="20"/></g>
   </svg>
 </div></div>
+
+<section id="veja" class="alt"><div class="w">
+  <h2>Veja o GK Core funcionando</h2>
+  <p class="sub">Um minuto e meio: do PDF do cliente até a ordem de serviço na fábrica.</p>
+  <div class="video"><video controls preload="none" poster="tela-desenho.jpg" playsinline><source src="gkcore-apresentacao.mp4" type="video/mp4"></video></div>
+  <div class="telas">
+    <figure><img src="tela-desenho.jpg" alt="Leitura de um desenho em PDF" loading="lazy"><figcaption><b>Lê o desenho do cliente.</b> DXF, PDF ou 3D: acha a peça, tira a folha e descobre a escala pelas cotas.</figcaption></figure>
+    <figure><img src="tela-orcamento.jpg" alt="Orçamento com as peças e o preço" loading="lazy"><figcaption><b>Preço na hora.</b> Material, corte, furos, dobras e a hora de máquina da sua empresa.</figcaption></figure>
+    <figure><img src="tela-encaixe.jpg" alt="Encaixe das peças na chapa" loading="lazy"><figcaption><b>Encaixe automático.</b> Mostra quantas chapas vão e aproveita melhor o material.</figcaption></figure>
+    <figure><img src="tela-proposta.jpg" alt="Proposta em PDF com a marca da empresa" loading="lazy"><figcaption><b>Proposta com a sua marca.</b> Em PDF, pronta para mandar pelo WhatsApp.</figcaption></figure>
+    <figure><img src="tela-producao.jpg" alt="Modo TV da produção" loading="lazy"><figcaption><b>Produção até a entrega.</b> Programação da máquina, inspeção, romaneio e modo TV.</figcaption></figure>
+    <figure><img src="tela-projetista.jpg" alt="Projetista montando uma bancada em 3D" loading="lazy"><figcaption><b>Projetista em 3D.</b> Escreva "bancada de 1800 com espelho" e ele monta, calcula e orça.</figcaption></figure>
+  </div>
+</div></section>
 
 <section id="recursos"><div class="w">
   <h2>Tudo o que o orçamento de corte precisa</h2>
