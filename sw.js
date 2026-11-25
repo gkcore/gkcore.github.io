@@ -1,5 +1,5 @@
 // GK Core: funciona sem internet e se atualiza sozinho (sempre tenta a versão nova primeiro)
-const CACHE = 'gkcore-1.0-202611251151';
+const CACHE = 'gkcore-1.0-202611251245';
 const ARQS = ['./', 'index.html', 'app.html', 'manifest.webmanifest', 'icone-192.png', 'icone-512.png'];
 self.addEventListener('install', e => { e.waitUntil(caches.open(CACHE).then(c => Promise.all(ARQS.map(a => c.add(a).catch(() => {})))).then(() => self.skipWaiting())); });
 self.addEventListener('activate', e => { e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k !== CACHE).map(k => caches.delete(k)))).then(() => self.clients.claim())); });
